@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.martix.fakesocial.view.ContainerActivity;
 import com.martix.fakesocial.view.CreateAccountActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goCreateAccount(View view){
         Intent intent = new Intent(this, CreateAccountActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToContainer(View view){
+        Intent intent = new Intent(this, ContainerActivity.class);
         startActivity(intent);
     }
 }
