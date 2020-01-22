@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.martix.fakesocial.R;
 import com.martix.fakesocial.model.Picture;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -42,6 +43,7 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<PictureAdap
         holder.usernameCard.setText(picture.getUserName());
         holder.timeCard.setText(picture.getTime());
         holder.likeNumberCard.setText(picture.getLikeNumber());
+        Picasso.get().load(picture.getPicture()).into(holder.pictureCard);
 
     }
 

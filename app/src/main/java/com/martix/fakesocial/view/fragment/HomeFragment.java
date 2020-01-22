@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        showToolbar("Home", false, view);
+        showToolbar(getResources().getString(R.string.tab_home), false, view);
         RecyclerView picturesRecycler = (RecyclerView) view.findViewById(R.id.pictureRecycler);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -47,10 +47,7 @@ public class HomeFragment extends Fragment {
         picturesRecycler.setLayoutManager(linearLayoutManager);
 
         PictureAdapterRecyclerView pictureAdapterRecyclerView = new PictureAdapterRecyclerView(buidPicture(), R.layout.cardview_picture, getActivity());
-
-
         picturesRecycler.setAdapter(pictureAdapterRecyclerView);
-
         return inflater.inflate(R.layout.fragment_home, container, false);
 
     }
@@ -58,9 +55,9 @@ public class HomeFragment extends Fragment {
 
     public ArrayList<Picture> buidPicture(){
         ArrayList<Picture> pictures = new ArrayList<>();
-        pictures.add(new Picture("https://cartermatt-bgmyzuarasgpknxgxbrs.netdna-ssl.com/wp-content/uploads/2015/06/Richard-Hendricks.jpg", "Richard Hendriks", "4 dias", "3"));
-        pictures.add(new Picture("https://laprensa.peru.com/espectaculos/noticia-mr-robot-temporada-4-que-significa-final-mr-robot-elliot-alderson-rami-malek-nnda-nnlt-95169#", "Elliot Alderson", "10 dias", "10"));
-        pictures.add(new Picture("https://rtvc-assets-radionica3.s3.amazonaws.com/s3fs-public/styles/image_750x424/public/field/image/article/5031627.jpg?itok=HKnpKIrH", "Bruce Dickinson", "7 dias", "25"));
+        pictures.add(new Picture("https://cartermatt-bgmyzuarasgpknxgxbrs.netdna-ssl.com/wp-content/uploads/2015/06/Richard-Hendricks.jpg", "Richard Hendriks", "4 dias", "3 Me gusta"));
+        pictures.add(new Picture("https://laprensa.peru.com/espectaculos/noticia-mr-robot-temporada-4-que-significa-final-mr-robot-elliot-alderson-rami-malek-nnda-nnlt-95169#", "Elliot Alderson", "10 dias", "10 Me gusta"));
+        pictures.add(new Picture("https://rtvc-assets-radionica3.s3.amazonaws.com/s3fs-public/styles/image_750x424/public/field/image/article/5031627.jpg?itok=HKnpKIrH", "Bruce Dickinson", "7 dias", "25 Me gusta"));
         return pictures;
     }
 
